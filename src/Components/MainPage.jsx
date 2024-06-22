@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import Footer from '../Components/Footer';
-import Header from '../Components/Header';
-import ShowFirebase from '../Components/ShowFirebase';
+import Footer from './Footer';
+import Header from './Header';
+import ShowFirebase from './ShowFirebase';
 
-const HomePage = ({ onStartGame }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState('');
+const MainPage = ({ onStartGame }) => {
   const [selectedOption, setSelectedOption] = useState('Quick match');
 
   const handleStartGame = () => {
@@ -46,7 +44,6 @@ const HomePage = ({ onStartGame }) => {
               {/* ***** Show Firebase interaction ***** */}
               <ShowFirebase />
               {/* ***** Find matches End ***** */}
-
               
               
               </div>
@@ -54,9 +51,9 @@ const HomePage = ({ onStartGame }) => {
           </div>
         </div>
         
-        <Footer/>    
+        <Footer/>  
     </div>
   )
 }
 
-export default HomePage;
+export default MainPage;

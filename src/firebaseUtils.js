@@ -26,10 +26,7 @@ const GetRooms = async () => {
     return rooms;
 }
 
-const deleteRoom = async (Id) => {
-    const roomDocRef = doc(db, "Rooms", Id);
-    await deleteDoc(roomDocRef);
-}
+
 
 // Function to create a room
 const createRoom = async (roomName, maxPlayers) => {
@@ -42,6 +39,12 @@ const createRoom = async (roomName, maxPlayers) => {
 
   return roomRef.id; // Return the room ID for further use
 };
+
+// Function to delete a room
+const deleteRoom = async (Id) => {
+    const roomDocRef = doc(db, "Rooms", Id);
+    await deleteDoc(roomDocRef);
+}
 
 // Function to add a player to a room
 const addPlayerToRoom = async (roomId) => {

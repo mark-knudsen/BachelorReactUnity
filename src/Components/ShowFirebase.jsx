@@ -22,6 +22,10 @@ const ShowFirebase = () => {
         .then(id => setRoomId(id))
         .catch(error => console.error('Error creating room:', error));
     };
+    const handleDeleteRoom = (id) => {
+      deleteRoom(id)      
+      .catch(error => console.error('Error deleting room:', error));
+    };
 
     const handleAddPlayer = (id) => {
       addPlayerToRoom(id)
@@ -32,23 +36,8 @@ const ShowFirebase = () => {
       removePlayerFromRoom(id)
         .catch(error => console.error('Error removing player:', error));
     };
-    const handleGetRooms = async () => {
-        const roomArray  = await GetRooms();
-        setRooms(roomArray);
-        console.log("lenght is: " + roomArray)
-        
-       // alert(rooms);
-    }
-
-   /* 
-    const roomList = rooms.map((room, index)=>
-        <tr key={index}>
-          <td>{room.name}</td>
-          <td>{room.maxPlayers}</td>
-          <td>{room.players}</td>
-        </tr>
-    );
-    */
+ 
+    // returns data from firebase
     const roomList = rooms.map((room, index)=>
         <div className="item" key={index}>
           <ul>
@@ -59,10 +48,10 @@ const ShowFirebase = () => {
             <li>
               <button onClick={() => handleAddPlayer(room.id)}>+</button>            
               <button onClick={() => handleRemovePlayer(room.id)}>-</button>       
-              <button onClick={() => deleteRoom(room.id)}>delete</button>
+              <button onClick={() => handleDeleteRoom(room.id)}>delete</button>
             </li>
             <li>
-            <div className={`main-border-button ${room.players == room.maxPlayers ? 'border-no-active' : ''}`}>
+            <div className={`main-border-button ${room.players >= room.maxPlayers ? 'border-no-active' : ''}`}>
               <a href="#">Join</a>
             </div>
             </li>
