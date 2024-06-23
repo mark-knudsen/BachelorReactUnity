@@ -4,8 +4,8 @@ import {createRoom, addPlayerToRoom, removePlayerFromRoom, GetRooms, subscribeTo
 
 const ShowFirebase = () => {
     const [rooms, setRooms] = useState([]);
-    const [roomName, setRoomName] = useState('');
-    const [maxPlayers, setMaxPlayers] = useState(0);
+    const [roomName, setRoomName] = useState('Test Room Bachelor');
+    const [maxPlayers, setMaxPlayers] = useState(4);
     const [roomId, setRoomId] = useState('');
     const [player, setPlayer] = useState({ playerId: '', playerName: '' });
 
@@ -71,8 +71,12 @@ const ShowFirebase = () => {
                       <input value={roomName} onChange={e => setRoomName(e.target.value)} placeholder="Type a match name" type='text' onkeypress="handle"/>
                       <input value={maxPlayers} onChange={e => setMaxPlayers(e.target.value)} placeholder="Max Players" type="number" />
                       <div >
-                      <div className="main-border-button" style={{position: "right"}}>
-                        <span> <a onClick={handleCreateRoom}>Create Room</a></span>
+                      <div className="main-button" style={{position: "right"}}>
+                        <span> 
+                          <div>
+                              <a onClick={handleCreateRoom}>Create Room</a>
+                          </div>
+                        </span>
                        
                         </div>
                  

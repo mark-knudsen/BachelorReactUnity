@@ -9,9 +9,7 @@ const Footer = () => {
               <div className="container">
                 <div className="row">
                   <div className="col-lg-12">
-                    <p>Copyright © {currentYear} <a href="#">JMK Gaming</a> Company. All rights reserved. 
-                    
-                    </p>
+                    <p>Copyright © {currentYear} <a href="#">JMK Gaming</a> Company. All rights reserved.</p>
                   </div>
                 </div>
               </div>

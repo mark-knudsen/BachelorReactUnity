@@ -78,10 +78,10 @@ const HomePage = () => {
     */
 
     return (
-        <div style={{ width: "100%", height: "100%"}}> 
+        <div style={{ width: "100%", height: "100%", overflow: "hidden"}}> 
             {/* Show either the Mainpage component or the Game */}
             {showUnity ? (
-                <Unity unityProvider={unityProvider} style={{ width: "100%", height: "100%" }} /> ) : (
+                <Unity unityProvider={unityProvider} style={{ width: "100%", height: "100%", overflow: "hidden" }} /> ) : (
                 <MainPage onStartGame={handleStartGame} />
                 )}
         </div>
